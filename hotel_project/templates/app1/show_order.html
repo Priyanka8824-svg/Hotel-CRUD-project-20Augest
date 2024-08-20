@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title> Show </title>
+{% endblock %}
+
+{% block content %}
+<h1><center> Order Record </center></h1>
+<table class="table table-warning table-striped">
+    <thead>
+    <tr>
+        <td> Hotel Id </td>
+        <td> Hotel Name </td>
+        <td> Hotel Address </td>
+        <td> Hotel City </td>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for hotel in obj %}
+    <tr>
+        <td> {{hotel.hid}} </td>
+        <td> {{hotel.hotel_name}} </td>
+        <td> {{hotel.address}} </td>
+        <td> {{hotel.city}} </td>
+        <td>
+            <a href="/a1/uv/{{hotel.hid}}"> <button class="btn btn-success"> Update </button> </a>
+            <a href="/a1/dv/{{hotel.hid}}"> <button class="btn btn-warning"> Delete </button> </a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
